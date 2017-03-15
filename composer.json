@@ -1,6 +1,6 @@
 {
   "name": "kennedytedesco/money",
-  "description": "A simple library to handle basic operations with money.",
+  "description": "A simple library to perform basic operations with money.",
   "keywords": ["money", "currency", "php"],
   "license": "MIT",
   "type": "library",

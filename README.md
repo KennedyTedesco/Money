@@ -6,7 +6,7 @@
 <a href="https://packagist.org/packages/KennedyTedesco/Money"><img src="https://poser.pugx.org/KennedyTedesco/Money/license.svg" alt="License"></a>
 </p>
 
-A simple library to handle basic operations with money. 
+A simple library to perform basic operations with money.
 
 If you're looking for high precision, money exchange etc, you'll not find here, so I really recommend you to take a look:
 
