@@ -93,14 +93,11 @@ interface MoneyInterface
     public function plusPercents($percentage);
 
     /**
-     * @return float|int
+     * @param int $precision
+     * @param int $roundingMode
+     * @return mixed
      */
-    public function amount();
-
-    /**
-     * @return float
-     */
-    public function float();
+    public function float($precision = 2, $roundingMode = self::ROUND_HALF_UP);
 
     /**
      * @param int $precision
@@ -108,4 +105,9 @@ interface MoneyInterface
      * @return mixed
      */
     public function format($precision = 2, $round = self::ROUND_HALF_UP);
+
+    /**
+     * @return float|int
+     */
+    public function amount();
 }
