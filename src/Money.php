@@ -157,9 +157,10 @@ class Money implements MoneyInterface
     /**
      * @param int $precision
      * @param int $roundingMode
-     * @return float|int|string
+     * @param bool $usingSymbol
+     * @return float|string
      */
-    public function format($precision = 2, $roundingMode = self::ROUND_HALF_UP)
+    public function format($precision = 2, $roundingMode = self::ROUND_HALF_UP, $usingSymbol = true)
     {
         if (! $this->currency) {
             return $this->float($precision, $roundingMode);
@@ -172,11 +173,25 @@ class Money implements MoneyInterface
             $this->currency->thousandSeparator()
         );
 
-        if ($this->currency->symbolFirst()) {
-            return "{$this->currency->symbol()}{$amount}";
-        } else {
-            return "{$amount}{$this->currency->symbol()}";
+        if($usingSymbol) {
+            if ($this->currency->symbolFirst()) {
+                return "{$this->currency->symbol()}{$amount}";
+            } else {
+                return "{$amount}{$this->currency->symbol()}";
+            }
         }
+
+        return $amount;
+    }
+
+    /**
+     * @param int $precision
+     * @param int $roundingMode
+     * @return float|string
+     */
+    public function formatWithoutSymbol($precision = 2, $roundingMode = self::ROUND_HALF_UP)
+    {
+        return $this->format($precision, $roundingMode, false);
     }
 
     /**

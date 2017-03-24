@@ -101,10 +101,18 @@ interface MoneyInterface
 
     /**
      * @param int $precision
-     * @param int $round
+     * @param int $roundingMode
+     * @param bool $usingSymbol
      * @return mixed
      */
-    public function format($precision = 2, $round = self::ROUND_HALF_UP);
+    public function format($precision = 2, $roundingMode = self::ROUND_HALF_UP, $usingSymbol = true);
+
+    /**
+     * @param int $precision
+     * @param int $roundingMode
+     * @return mixed
+     */
+    public function formatWithoutSymbol($precision = 2, $roundingMode = self::ROUND_HALF_UP);
 
     /**
      * @return float|int

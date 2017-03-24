@@ -108,11 +108,19 @@ class MoneyTest extends TestCase
         $this->assertEquals(110, $money1->amount());
     }
 
-    public function testMoneyFormatted()
+    public function testMoneyFormat()
     {
         $money = (new Money(20, 'BRL'))->sub(1.57)->div(2);
 
         $this->assertEquals($money->format(), 'R$ 9,22');
+        $this->assertEquals($money->amount(), 9.215);
+    }
+
+    public function testFormatWithoutSymbol()
+    {
+        $money = (new Money(20, 'BRL'))->sub(1.57)->div(2);
+
+        $this->assertEquals($money->formatWithoutSymbol(), '9,22');
         $this->assertEquals($money->amount(), 9.215);
     }
 
