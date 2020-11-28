@@ -235,7 +235,7 @@ class Money implements MoneyInterface
      * @param $roundingMode
      * @return float|int
      */
-    private function round($amount, $precision = 2, $roundingMode)
+    private function round($amount, $precision = 2, $roundingMode = self::ROUND_UP)
     {
         $this->assertRoudingMode($roundingMode);
 

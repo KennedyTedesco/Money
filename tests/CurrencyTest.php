@@ -18,12 +18,4 @@ class CurrencyTest extends TestCase
         $this->assertEquals($brl->thousandSeparator(), '.');
         $this->assertEquals($brl->symbolFirst(), true);
     }
-
-    /**
-     * @expectedException \UnexpectedValueException
-     */
-    public function testNotFoundCurrency()
-    {
-        $foo = new Currency('FOO');
-    }
 }
